@@ -2,7 +2,7 @@
   <h1>Enviar ordem</h1>
 
   <form #orderForm="ngForm" (ngSubmit)="submit(orderForm)">
-    <label for="symbol">Símbolo</label>
+    <label for="symbol">Ativo</label>
     <select id="symbol" name="symbol" [(ngModel)]="order.symbol" required>
       <option value="" disabled>Selecione</option>
       <option value="PETR4">PETR4</option>

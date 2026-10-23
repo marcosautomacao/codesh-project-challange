@@ -12,6 +12,7 @@ build/
 *.user
 *.suo
 packages/
+TestResults/
 
 # Local FIX session state and logs
 **/store/

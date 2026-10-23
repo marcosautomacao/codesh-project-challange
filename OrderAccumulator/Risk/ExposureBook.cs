@@ -21,7 +21,7 @@ public sealed class ExposureBook
 
             if (!AllowedSymbols.Contains(symbol))
             {
-                return Reject(currentExposure, "Unsupported symbol.");
+                return Reject(currentExposure, "Ativo não permitido.");
             }
 
             if (side is not ('1' or '2'))
@@ -43,7 +43,7 @@ public sealed class ExposureBook
             var candidateExposure = currentExposure + signedOrderValue;
             if (candidateExposure > ExposureLimit || candidateExposure < -ExposureLimit)
             {
-                return Reject(currentExposure, "Order would exceed the per-symbol exposure limit.");
+                return Reject(currentExposure, "A ordem ultrapassaria o limite de exposição do ativo.");
             }
 
             _exposureBySymbol[symbol] = candidateExposure;
