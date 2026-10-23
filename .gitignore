@@ -1,0 +1,32 @@
+# Node.js and Angular
+node_modules/
+dist/
+build/
+.angular/
+*.log
+.env*
+
+# .NET
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+packages/
+TestResults/
+
+# Local FIX session state and logs
+**/store/
+**/log/
+
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+.opencode/
+.specify/
+project-challange-spec
+specs/
