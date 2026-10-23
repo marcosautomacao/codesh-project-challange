@@ -1,0 +1,56 @@
+<main>
+  <h1>Enviar ordem</h1>
+
+  <form #orderForm="ngForm" (ngSubmit)="submit(orderForm)">
+    <label for="symbol">Símbolo</label>
+    <select id="symbol" name="symbol" [(ngModel)]="order.symbol" required>
+      <option value="" disabled>Selecione</option>
+      <option value="PETR4">PETR4</option>
+      <option value="VALE3">VALE3</option>
+      <option value="VIIA4">VIIA4</option>
+    </select>
+
+    <label for="side">Lado</label>
+    <select id="side" name="side" [(ngModel)]="order.side" required>
+      <option value="" disabled>Selecione</option>
+      <option value="Compra">Compra</option>
+      <option value="Venda">Venda</option>
+    </select>
+
+    <label for="quantity">Quantidade</label>
+    <input
+      id="quantity"
+      name="quantity"
+      type="number"
+      min="1"
+      max="99999"
+      step="1"
+      [(ngModel)]="order.quantity"
+      required
+    />
+
+    <label for="price">Preço</label>
+    <input
+      id="price"
+      name="price"
+      type="number"
+      min="0.01"
+      max="999.99"
+      step="0.01"
+      [(ngModel)]="order.price"
+      required
+    />
+
+    <button type="submit" [disabled]="orderForm.invalid || submitting">
+      {{ submitting ? 'Enviando…' : 'Enviar ordem' }}
+    </button>
+  </form>
+
+  @if (execType) {
+    <p role="status">Resposta: {{ execType }}</p>
+  }
+
+  @if (errorMessage) {
+    <p role="alert">{{ errorMessage }}</p>
+  }
+</main>

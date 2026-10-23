@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="QuickFIXn.Core" Version="1.14.1" />
+    <PackageReference Include="QuickFIXn.FIX44" Version="1.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="quickfix.cfg" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
